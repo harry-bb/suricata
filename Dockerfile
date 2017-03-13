@@ -1,6 +1,6 @@
 # suricata dockerfile by MO
 #
-# VERSION 16.10
+# VERSION 17.06
 FROM ubuntu:16.04
 MAINTAINER MO
 
