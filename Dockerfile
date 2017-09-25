@@ -28,9 +28,10 @@ RUN echo "deb http://ppa.launchpad.net/oisf/suricata-stable/ubuntu xenial main" 
     adduser --system --no-create-home --shell /bin/bash --uid 2000 --disabled-password --disabled-login --gid 2000 tpot && \
     mv /root/dist/supervisord.conf /etc/supervisor/conf.d/supervisord.conf && \
     mv /root/dist/suricata.yaml /etc/suricata/suricata.yaml && \
+    mv /root/dist/rules/ /etc/suricata/rules/
 
 # Download the latest EmergingThreats ruleset
-    wget --no-parent -l1 -r --no-directories -P /etc/suricata/rules/ https://rules.emergingthreats.net/open/suricata/rules/ && \
+#    wget --no-parent -l1 -r --no-directories -P /etc/suricata/rules/ https://rules.emergingthreats.net/open/suricata/rules/ && \
 
 # Clean up
     rm -rf /root/* && \
