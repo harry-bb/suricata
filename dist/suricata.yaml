@@ -121,7 +121,7 @@ outputs:
             # payload: yes           # enable dumping payload in Base64
             # payload-printable: yes # enable dumping payload in printable (lossy) format
             # packet: yes            # enable dumping of packet (without stream segments)
-            http: yes              # enable dumping of http fields
+            #http: yes              # enable dumping of http fields
             #tls: yes               # enable dumping of tls fields
             #ssh: yes               # enable dumping of ssh fields
             #smtp: yes              # enable dumping of smtp fields
