@@ -16,7 +16,7 @@ RUN echo "deb http://ppa.launchpad.net/oisf/suricata-stable/ubuntu xenial main" 
     apt-get update -y && \
     apt-get upgrade -y && \
     mkdir -p /config/etc && mv /etc/timezone /config/etc/ && ln -s /config/etc/timezone /etc/ && \
-    echo "Asia/Calcutta" > /config/etc/timezone
+    echo "Asia/Calcutta" > /config/etc/timezone && \
 
 # Install packages
     apt-get install -y net-tools supervisor suricata wget make gcc libpcap-dev libjansson-dev git && \
@@ -31,7 +31,7 @@ RUN echo "deb http://ppa.launchpad.net/oisf/suricata-stable/ubuntu xenial main" 
     mv /root/dist/supervisord.conf /etc/supervisor/conf.d/supervisord.conf && \
     mv /root/dist/suricata.yaml /etc/suricata/suricata.yaml && \
     mv /root/dist/rules/* /etc/suricata/rules/ && \
-    dpkg-reconfigure -f noninteractive tzdata
+    dpkg-reconfigure -f noninteractive tzdata && \
 
 # Download the latest EmergingThreats ruleset
 #    wget --no-parent -l1 -r --no-directories -P /etc/suricata/rules/ https://rules.emergingthreats.net/open/suricata/rules/ && \
