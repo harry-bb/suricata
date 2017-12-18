@@ -16,6 +16,12 @@ RUN echo "deb http://ppa.launchpad.net/oisf/suricata-stable/ubuntu xenial main" 
     apt-get update -y && \
     apt-get upgrade -y && \
 
+RUN mkdir -p /config/etc && mv /etc/timezone /config/etc/ && ln -s /config/etc/timezone /etc/
+
+dpkg-reconfigure -f noninteractive tzdata
+
+RUN echo "Asia/Calcutta" > /config/etc/timezone
+
 # Install packages
     apt-get install -y net-tools supervisor suricata wget make gcc libpcap-dev libjansson-dev git && \
     cd /opt/ && \
